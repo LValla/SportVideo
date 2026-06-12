@@ -7,7 +7,7 @@ let accessToken = null;
 let videoStream = null;
 
 // YouTube API Configuration
-const YOUTUBE_CLIENT_ID = 'YOUR_YOUTUBE_CLIENT_ID_HERE';
+const YOUTUBE_CLIENT_ID = '19616453952-u6bbdaf3g69j2hvhmdag6jv36h23a3og.apps.googleusercontent.com';
 const YOUTUBE_REDIRECT_URI = window.location.origin;
 const YOUTUBE_SCOPES = ['https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.force-ssl'];
 
