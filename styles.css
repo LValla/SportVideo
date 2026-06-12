@@ -18,7 +18,6 @@ body {
 
 /* Login Screen */
 #loginScreen {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -26,12 +25,13 @@ body {
     height: 100vh;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     z-index: 1000;
-}
-
-#loginScreen.active {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#loginScreen:not(.active) {
+    display: none;
 }
 
 .login-container {
@@ -42,11 +42,6 @@ body {
     text-align: center;
     max-width: 400px;
     width: 90%;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1001;
 }
 
 .login-container h1 {
