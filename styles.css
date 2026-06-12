@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+/* Login Screen */
+#loginScreen {
+    display: none;
+}
+
+#loginScreen.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.login-container {
+    background: white;
+    padding: 60px 40px;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.login-container h1 {
+    color: #667eea;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.login-container > p {
+    color: #888;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.login-form h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.info-text {
+    color: #888;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Streaming Screen */
+#streamingScreen {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    position: relative;
+}
+
+#streamingScreen.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Video Container */
+.video-container {
+    flex: 1;
+    background: #000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#cameraFeed {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Score Counters - Top Right */
+.score-board {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+}
+
+.team-score {
+    background: rgba(0, 0, 0, 0.8);
+    border: 3px solid #667eea;
+    border-radius: 15px;
+    padding: 20px 30px;
+    min-width: 150px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.team-score h3 {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.score-display {
+    color: #667eea;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.score-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.score-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s;
+    flex: 1;
+}
+
+.score-btn:hover {
+    background: #764ba2;
+    transform: scale(1.05);
+}
+
+.score-btn:active {
+    transform: scale(0.95);
+}
+
+.score-btn.minus {
+    background: #e74c3c;
+}
+
+.score-btn.minus:hover {
+    background: #c0392b;
+}
+
+/* Control Panel - Bottom */
+.control-panel {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: 2px solid #667eea;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #764ba2;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #27ae60;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #229954;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(39, 174, 96, 0.4);
+}
+
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(231, 76, 60, 0.4);
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 18px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn .icon {
+    font-size: 20px;
+}
+
+/* Set Indicator */
+.set-indicator {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    padding: 15px 25px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.set-number {
+    color: #667eea;
+    font-size: 28px;
+}
+
+/* Live Indicator */
+.live-indicator {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+    animation: pulse 1.5s infinite;
+}
+
+.live-dot {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+    }
+}
+
+/* Logout Button */
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(231, 76, 60, 0.8);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.logout-btn:hover {
+    background: rgba(192, 57, 43, 0.9);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .score-board {
+        top: 10px;
+        right: 10px;
+        gap: 10px;
+    }
+
+    .team-score {
+        padding: 15px 20px;
+        min-width: 120px;
+    }
+
+    .score-display {
+        font-size: 36px;
+    }
+
+    .score-btn {
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+
+    .control-panel {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .set-indicator {
+        top: 10px;
+        left: 10px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .live-indicator {
+        bottom: 80px;
+        font-size: 16px;
+    }
+
+    .login-container {
+        padding: 40px 20px;
+    }
+}
+
+/* Utility */
+.hidden {
+    display: none !important;
+}
+
+.active {
+    display: block !important;
+}
