@@ -21,6 +21,63 @@
                 <p class="info-text">Accedi al tuo account YouTube per iniziare la diretta</p>
             </div>
         </div>
-    </body>
+    </div>
+
+    <!-- Streaming Screen -->
+    <div id="streamingScreen" class="screen">
+        <!-- Logout Button -->
+        <button id="logoutBtn" class="logout-btn">Esci</button>
+
+        <!-- Set Indicator -->
+        <div class="set-indicator">
+            Set <span class="set-number" id="setNumber">1</span>
+        </div>
+
+        <!-- Live Indicator -->
+        <div class="live-indicator" id="liveIndicator">
+            <span class="live-dot"></span>
+            <span>IN DIRETTA</span>
+        </div>
+
+        <!-- Video Container -->
+        <div class="video-container">
+            <video id="cameraFeed" autoplay playsinline></video>
+
+            <!-- Score Board -->
+            <div class="score-board">
+                <!-- Team 1 -->
+                <div class="team-score">
+                    <h3>Squadra A</h3>
+                    <div class="score-display" id="team1Score">0</div>
+                    <div class="score-buttons">
+                        <button class="score-btn minus" onclick="decreaseScore(1)">−</button>
+                        <button class="score-btn" onclick="increaseScore(1)">+</button>
+                    </div>
+                </div>
+
+                <!-- Team 2 -->
+                <div class="team-score">
+                    <h3>Squadra B</h3>
+                    <div class="score-display" id="team2Score">0</div>
+                    <div class="score-buttons">
+                        <button class="score-btn minus" onclick="decreaseScore(2)">−</button>
+                        <button class="score-btn" onclick="increaseScore(2)">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <button id="endStreamBtn" class="btn btn-danger">
+                <span class="icon">⏹</span> Termina Diretta
+            </button>
+            <button id="closeSetBtn" class="btn btn-secondary">
+                <span class="icon">✓</span> Chiudi Set
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
